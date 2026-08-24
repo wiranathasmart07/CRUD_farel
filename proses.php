@@ -1,4 +1,5 @@
 <?php
+require 'auth_check.php';
 require 'koneksi.php';
 
 // Menangkap data dari form dengan fallback string kosong

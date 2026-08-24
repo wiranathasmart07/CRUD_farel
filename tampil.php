@@ -1,4 +1,5 @@
 <?php
+require 'auth_check.php';
 require 'koneksi.php';
 
 // Menjalankan query untuk mengambil data
@@ -17,14 +18,20 @@ $query = mysqli_query($koneksi, $sql);
         th, td { border: 1px solid #ddd; padding: 12px 15px; text-align: left; }
         th { background-color: #f8fafc; color: #333; font-weight: bold; }
         tr:nth-child(even) { background-color: #f9f9f9; }
+        .action-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
         .btn { display: inline-block; padding: 10px 15px; background: #2563eb; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; }
         .btn:hover { background: #1d4ed8; }
+        .btn-danger { background: #dc2626; }
+        .btn-danger:hover { background: #b91c1c; }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>Daftar Siswa Sekolah</h2>
-        <a href="index.php" class="btn">+ Tambah Data Baru</a>
+        <div class="action-bar">
+            <a href="index.php" class="btn">+ Tambah Data Baru</a>
+            <a href="logout.php" class="btn btn-danger">Logout (<?= htmlspecialchars($_SESSION['username']); ?>)</a>
+        </div>
         <table>
             <thead>
                 <tr>
