@@ -11,7 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!empty($username) && !empty($password)) {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-        // Cek apakah username sudah dipakai
         $check_sql = "SELECT id FROM users WHERE username = ?";
         $stmt_check = mysqli_prepare($koneksi, $check_sql);
         mysqli_stmt_bind_param($stmt_check, "s", $username);

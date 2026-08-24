@@ -17,6 +17,9 @@
     <div class="container">
         <h2 style="text-align: center;">Tambah Siswa</h2>
         <form action="proses.php" method="POST">
+            <label>NIS:</label>
+            <input type="number" name="nis" required>
+
             <label>Nama:</label>
             <input type="text" name="nama" required>
             

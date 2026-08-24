@@ -2,7 +2,6 @@
 session_start();
 require 'koneksi.php';
 
-// Jika sudah login, langsung lempar ke tampil.php
 if (isset($_SESSION['login'])) {
     header("Location: tampil.php");
     exit;

@@ -1,15 +1,16 @@
 CREATE DATABASE IF NOT EXISTS sekolah;
 USE sekolah;
 
--- Tabel Data Siswa
+-- Tabel Data Siswa (id diganti dengan nis)
+DROP TABLE IF EXISTS siswa;
 CREATE TABLE IF NOT EXISTS siswa (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    nis INT PRIMARY KEY,
     nama VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL,
     kelas VARCHAR(50) NOT NULL
 );
 
--- Tabel Data User / Akun
+-- Tabel Data User / Akun Login
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
